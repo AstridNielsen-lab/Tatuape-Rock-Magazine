@@ -32,6 +32,10 @@ const Header: React.FC = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const handleListenClick = () => {
+    window.open('https://radiotatuapefm.radiostream321.com/', '_blank');
+  };
+
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -73,7 +77,7 @@ const Header: React.FC = () => {
               <Link 
                 key={item.path}
                 to={item.path}
-                className="font-subheading text-light hover:text-highlight transition-colors relative group"
+                className="font-subheading text-light hover:text-highlight transition-colors relative group text-sm"
               >
                 {item.label}
                 <span className="absolute left-0 right-0 bottom-0 h-0.5 bg-highlight scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
@@ -87,7 +91,7 @@ const Header: React.FC = () => {
               variant="outline" 
               size="sm" 
               icon={<Search className="w-4 h-4" />} 
-              className="hidden sm:flex"
+              className="hidden sm:flex rounded-xl"
             >
               Buscar
             </Button>
@@ -96,7 +100,8 @@ const Header: React.FC = () => {
               variant="primary" 
               size="sm" 
               icon={<Headphones className="w-4 h-4" />}
-              className="hidden sm:flex"
+              className="hidden sm:flex rounded-xl"
+              onClick={handleListenClick}
             >
               Ouça Agora
             </Button>
@@ -118,13 +123,13 @@ const Header: React.FC = () => {
           animate={isMenuOpen ? "open" : "closed"}
           variants={menuVariants}
         >
-          <div className="py-6 space-y-6 bg-dark bg-opacity-95 backdrop-blur-sm rounded-b-lg">
+          <div className="py-6 space-y-6 bg-dark bg-opacity-95 backdrop-blur-sm rounded-xl">
             <nav className="flex flex-col space-y-4">
               {navItems.map(item => (
                 <motion.div key={item.path} variants={itemVariants}>
                   <Link 
                     to={item.path}
-                    className="block py-2 px-4 font-subheading text-light hover:bg-primary/20 hover:text-highlight transition-colors"
+                    className="block py-2 px-4 font-subheading text-light hover:bg-primary/20 hover:text-highlight transition-colors text-sm"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -139,6 +144,7 @@ const Header: React.FC = () => {
                 size="md" 
                 fullWidth
                 icon={<Search className="w-4 h-4" />}
+                className="rounded-xl"
               >
                 Buscar
               </Button>
@@ -147,6 +153,8 @@ const Header: React.FC = () => {
                 size="md" 
                 fullWidth
                 icon={<Headphones className="w-4 h-4" />}
+                className="rounded-xl"
+                onClick={handleListenClick}
               >
                 Ouça Agora
               </Button>

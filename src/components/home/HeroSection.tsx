@@ -9,6 +9,10 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ featuredIssue }) => {
+  const handleListenClick = () => {
+    window.open('https://radiotatuapefm.radiostream321.com/', '_blank');
+  };
+
   return (
     <section className="relative overflow-hidden py-16 md:py-24 bg-dark bg-opacity-80">
       <div className="container-custom relative z-10">
@@ -20,13 +24,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ featuredIssue }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading text-light mb-4">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading text-light mb-4">
                 <span className="gradient-text glow">Revista Tatuapé FM</span>
               </h1>
-              <p className="text-xl md:text-2xl font-subheading text-accent mb-6">
+              <p className="text-lg md:text-xl font-subheading text-accent mb-6">
                 O melhor do rock clássico, hard rock e heavy metal
               </p>
-              <p className="text-lg text-gray-300 mb-8 max-w-xl">
+              <p className="text-base text-gray-300 mb-8 max-w-xl">
                 Mergulhe no universo do rock com nossa revista mensal. 
                 Entrevistas exclusivas, análises de discos clássicos e 
                 tudo sobre a cultura que transformou gerações.
@@ -45,6 +49,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ featuredIssue }) => {
                   variant="outline"
                   size="lg"
                   icon={<Music size={20} />}
+                  onClick={handleListenClick}
                 >
                   Ouvir a Rádio
                 </Button>
@@ -62,7 +67,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ featuredIssue }) => {
             >
               <div className="relative group">
                 {/* Magazine Cover */}
-                <div className="relative z-10 perspective-card retro-shadow bg-gray-900 rounded overflow-hidden">
+                <div className="relative z-10 perspective-card retro-shadow bg-gray-900 rounded-xl overflow-hidden">
                   <div className="relative w-64 md:w-72 lg:w-80 aspect-[3/4]">
                     <img 
                       src={featuredIssue.coverImageUrl}
@@ -86,7 +91,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ featuredIssue }) => {
               </div>
 
               {/* Label */}
-              <div className="absolute -top-4 -right-4 z-20 bg-highlight text-dark py-1 px-3 rotate-6 font-heading text-sm retro-shadow">
+              <div className="absolute -top-4 -right-4 z-20 bg-highlight text-dark py-1 px-3 rotate-6 font-heading text-sm retro-shadow rounded-xl">
                 Nova Edição!
               </div>
             </motion.div>
