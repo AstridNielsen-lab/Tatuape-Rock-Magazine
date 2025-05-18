@@ -1,5 +1,4 @@
 import React from 'react';
-import { Headphones, Radio, Music } from 'lucide-react';
 import classNames from 'classnames';
 
 interface LogoProps {
@@ -18,40 +17,37 @@ const Logo: React.FC<LogoProps> = ({
   const sizeClasses = {
     sm: {
       container: 'text-xl',
-      icon: 'w-5 h-5',
-      logo: 'text-xl',
+      logo: 'w-8 h-8',
+      text: 'text-xl',
       tagline: 'text-xs'
     },
     md: {
       container: 'text-2xl',
-      icon: 'w-6 h-6',
-      logo: 'text-2xl',
+      logo: 'w-10 h-10',
+      text: 'text-2xl',
       tagline: 'text-sm'
     },
     lg: {
       container: 'text-4xl',
-      icon: 'w-8 h-8',
-      logo: 'text-4xl',
+      logo: 'w-12 h-12',
+      text: 'text-4xl',
       tagline: 'text-base'
     }
   };
 
   const renderIcon = () => (
     <div className="relative">
-      <Radio className={classNames('text-primary', sizeClasses[size].icon)} />
-      <span className="absolute -top-1 -right-1">
-        <Music className={classNames('text-highlight', 'w-3 h-3', {
-          'w-3 h-3': size === 'sm',
-          'w-4 h-4': size === 'md',
-          'w-5 h-5': size === 'lg'
-        })} />
-      </span>
+      <img 
+        src="https://static.wixstatic.com/media/a6112a_24a2b1347f0941bb83414e427d5d5ac0f000.jpg/v1/fill/w_294,h_288,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/a6112a_24a2b1347f0941bb83414e427d5d5ac0f000.jpg"
+        alt="Tatuapé FM Logo"
+        className={classNames('rounded-full', sizeClasses[size].logo)}
+      />
     </div>
   );
 
   const renderText = () => (
     <div className="flex flex-col">
-      <span className={classNames('font-heading leading-none', sizeClasses[size].logo)}>
+      <span className={classNames('font-heading leading-none', sizeClasses[size].text)}>
         <span className="text-primary">Tatuapé</span>
         <span className="text-highlight">FM</span>
       </span>
