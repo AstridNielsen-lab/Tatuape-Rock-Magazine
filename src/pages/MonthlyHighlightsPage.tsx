@@ -1,11 +1,29 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { featuredArticles } from '../data/mockData';
+import { useNavigate } from 'react-router-dom';
 
 const MonthlyHighlightsPage = () => {
+  const navigate = useNavigate();
   const monthlyHighlights = featuredArticles.filter(
     article => article.category === 'monthly-highlights'
   );
+
+  const handleArticleClick = (title: string) => {
+    if (title.includes('Iron Maiden')) {
+      navigate('/articles/iron-maiden-50-years');
+    } else if (title.includes('Bandas Brasileiras')) {
+      navigate('/articles/bandas-brasileiras');
+    } else if (title.includes('Guns N\' Roses')) {
+      navigate('/articles/guns-n-roses');
+    } else if (title.includes('Metallica')) {
+      navigate('/articles/metallica');
+    } else if (title.includes('Bon Jovi')) {
+      navigate('/articles/bon-jovi');
+    } else if (title.includes('Mötley Crüe')) {
+      navigate('/articles/motley-crue');
+    }
+  };
 
   return (
     <Layout>
@@ -20,7 +38,11 @@ const MonthlyHighlightsPage = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {monthlyHighlights.map(article => (
-              <div key={article.id} className="card hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div 
+                key={article.id} 
+                className="card hover:transform hover:-translate-y-2 transition-all duration-300 cursor-pointer"
+                onClick={() => handleArticleClick(article.title)}
+              >
                 <div className="aspect-video relative overflow-hidden">
                   <img 
                     src={article.imageUrl} 

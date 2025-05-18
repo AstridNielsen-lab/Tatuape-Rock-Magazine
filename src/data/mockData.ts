@@ -34,12 +34,56 @@ export const featuredArticles: Article[] = [
     publishDate: '2023-06-02',
     author: 'Claudio Tsunami',
     featured: true
+  },
+  {
+    id: '4',
+    title: 'Guns N\' Roses: A Explosão do Hard Rock',
+    excerpt: 'Appetite for Destruction completa 35 anos e continua sendo um dos álbuns mais influentes do rock.',
+    imageUrl: 'https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'monthly-highlights',
+    tags: ['guns n roses', 'hard rock', 'anos 80', 'appetite for destruction'],
+    publishDate: '2023-03-15',
+    author: 'Mike Stone',
+    featured: true
+  },
+  {
+    id: '5',
+    title: 'Metallica: Masters of Thrash',
+    excerpt: 'Como Master of Puppets redefiniu os limites do thrash metal e se tornou um clássico instantâneo.',
+    imageUrl: 'https://images.pexels.com/photos/165971/pexels-photo-165971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'monthly-highlights',
+    tags: ['metallica', 'thrash metal', 'anos 80', 'master of puppets'],
+    publishDate: '2023-02-10',
+    author: 'John Thunder',
+    featured: true
+  },
+  {
+    id: '6',
+    title: 'Bon Jovi: Do Underground ao Mainstream',
+    excerpt: 'A trajetória da banda que conquistou o mundo com sua mistura única de hard rock e pop.',
+    imageUrl: 'https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'monthly-highlights',
+    tags: ['bon jovi', 'hard rock', 'anos 80', 'slippery when wet'],
+    publishDate: '2023-01-20',
+    author: 'Lisa Rock',
+    featured: true
+  },
+  {
+    id: '7',
+    title: 'Mötley Crüe: Os Bad Boys do Sunset Strip',
+    excerpt: 'A história da banda que personificou o espírito selvagem do hair metal dos anos 80.',
+    imageUrl: 'https://images.pexels.com/photos/2747446/pexels-photo-2747446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    category: 'monthly-highlights',
+    tags: ['motley crue', 'hair metal', 'anos 80', 'dr feelgood'],
+    publishDate: '2022-12-05',
+    author: 'Tommy Thunder',
+    featured: true
   }
 ];
 
 export const recentArticles: Article[] = [
   {
-    id: '4',
+    id: '8',
     title: 'Vinil vs. Streaming: A Batalha pelo Futuro da Música',
     excerpt: 'Analisamos as vantagens e desvantagens de cada formato e como eles estão moldando o consumo de música.',
     imageUrl: 'https://images.pexels.com/photos/1374557/pexels-photo-1374557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -49,7 +93,7 @@ export const recentArticles: Article[] = [
     author: 'Mariana Grooves'
   },
   {
-    id: '5',
+    id: '9',
     title: 'Entrevista Exclusiva: O Retorno de Angra',
     excerpt: 'Conversamos com Rafael Bittencourt sobre o novo álbum e a turnê mundial da banda.',
     imageUrl: 'https://images.pexels.com/photos/5191631/pexels-photo-5191631.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -59,7 +103,7 @@ export const recentArticles: Article[] = [
     author: 'Pedro Marshall'
   },
   {
-    id: '6',
+    id: '10',
     title: 'Pedaleiras Vintage: Vale a Pena o Investimento?',
     excerpt: 'Especialistas analisam o mercado de equipamentos antigos e se o som justifica os preços elevados.',
     imageUrl: 'https://images.pexels.com/photos/164693/pexels-photo-164693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -69,7 +113,7 @@ export const recentArticles: Article[] = [
     author: 'Fernando Distortion'
   },
   {
-    id: '7',
+    id: '11',
     title: 'Os Filmes que Definiram a Estética do Rock',
     excerpt: 'De "The Wall" a "This Is Spinal Tap": como o cinema influenciou e foi influenciado pelo rock.',
     imageUrl: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
