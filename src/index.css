@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 358 74% 48%;      /* #d72638 - Dark red */
+    --color-secondary: 216 85% 34%;    /* #1058a1 - Deep blue */
+    --color-accent: 193 92% 75%;       /* #94ebff - Light blue */
+    --color-highlight: 46 100% 58%;    /* #ffbe0b - Bright yellow */
+    
+    --color-dark: 0 0% 9%;             /* #171717 - Almost black */
+    --color-light: 0 0% 96%;           /* #f5f5f5 - Off white */
+    
+    --color-success: 142 76% 36%;      /* #1db954 - Spotify green */
+    --color-warning: 32 100% 50%;      /* #ff9500 - Orange */
+    --color-error: 0 100% 50%;         /* #ff0000 - Pure red */
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-dark text-light font-body overflow-x-hidden;
+    background-image: url('https://images.pexels.com/photos/172292/pexels-photo-172292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+  }
+
+  h1, h2, h3 {
+    @apply font-heading font-bold tracking-tight;
+  }
+  
+  h4, h5, h6 {
+    @apply font-subheading font-semibold;
+  }
+
+  .noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=');
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.3;
+  }
+  
+  .record {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+  }
+  
+  .record::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(circle at center, transparent 0, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 11px);
+  }
+  
+  .record::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 25%;
+    border-radius: 50%;
+    background: #444;
+    box-shadow: 0 0 0 5px #000;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark bg-opacity-50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md transition duration-300 cursor-pointer;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-light hover:bg-primary/90 shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-light hover:bg-secondary/90;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-highlight text-highlight bg-transparent hover:bg-highlight hover:text-dark;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading text-primary mb-8 relative;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-highlight;
+    transform: translateY(8px);
+  }
+
+  .card {
+    @apply bg-dark bg-opacity-90 backdrop-blur-sm rounded-lg overflow-hidden transition-all duration-300 border border-gray-800 hover:border-primary;
+  }
+  
+  .card-highlight {
+    @apply border-l-4 border-l-highlight;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-highlight font-bold;
+  }
+
+  .retro-shadow {
+    box-shadow: 
+      3px 3px 0 theme('colors.highlight'),
+      6px 6px 0 rgba(0,0,0,0.3);
+  }
+
+  .vinyl-spin {
+    animation: spin 10s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px theme('colors.highlight'), 0 0 20px theme('colors.highlight');
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px theme('colors.highlight'), 0 0 40px theme('colors.highlight');
+    }
+  }
+}
